@@ -1,0 +1,30 @@
+resources:
+  - cluster-role.yaml
+  - cluster-rolebinding.yaml
+  - clusterrole-admission.yaml
+  - clusterrolebinding-admission.yaml
+  - deployment.yaml
+  - ingress-class.yaml
+  - job.yaml
+  - job-patchWebhook.yaml
+  - psp-rolebinding.yaml
+  - role.yaml
+  - role-admission.yaml
+  - rolebinding.yaml
+  - rolebinding-admission.yaml
+  - service-account.yaml
+  - service-controller.yaml
+  - service-webhook.yaml
+  - serviceaccount-admission.yaml
+  - validating-webhook.yaml
+namespace: ingress-nginx
+commonLabels:
+  app: ingress-nginx
+  app.kubernetes.io/name: ingress-nginx
+  app.kubernetes.io/part-of: ingress-nginx
+configMapGenerator:
+- name: ingress-nginx-controller
+  envs:
+  - params.env
+generatorOptions:
+  disableNameSuffixHash: true

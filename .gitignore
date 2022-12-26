@@ -1,0 +1,3 @@
+deployment-*all.yaml
+*.tar.gz
+.idea
